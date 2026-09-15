@@ -1,0 +1,566 @@
+
+
+
+
+<!doctype html>
+<html amp lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>PAUS123 | Multiplayer Mode Membawa Keseruan Yang Berbeda.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bermain bersama menghadirkan dinamika yang tidak ditemukan dalam pengalaman solo. Mode multiplayer pada PAUS123 memberi kesempatan untuk berkolaborasi, berkomunikasi, dan merespons situasi secara langsung, sehingga interaksi antarpemain menjadi bagian penting dari jalannya permainan.">
+  <meta name="robots" content="index, follow, nosnippet">
+  <meta property="og:url" content="https://paus123.co/">
+  <meta property="og:image" content="https://paus123.co/img/p-a-u-s-1-2-3.png">
+  <link rel="icon" type="image/x-icon" href="https://paus123.co/img/favicon.png">
+  <link rel="canonical" href="https://paus123.co/">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AMP BOILERPLATE -->
+  <style amp-boilerplate>
+    body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}
+    @-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    @-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    @-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    @-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+    </style>
+  </noscript>
+
+  <!-- CUSTOM CSS -->
+<style amp-custom>
+:root{
+    --bg:#05070a;
+    --bg2:#0a0d12;
+    --glass:rgba(18,22,30,.72);
+    --glass-strong:rgba(24,29,39,.9);
+    --line:rgba(255,255,255,.10);
+    --line-soft:rgba(255,255,255,.055);
+
+    --gold:#f6c96b;
+    --gold2:#ffe6ad;
+    --gold3:#ba8128;
+
+    --blue:#5fc9ff;
+    --blue2:#8addff;
+
+    --white:#fff;
+    --text:#f7f9fc;
+    --muted:#aeb8c8;
+
+    --shadow:0 24px 70px rgba(0,0,0,.55);
+    --ios-radius:34px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter",Arial,sans-serif;
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:26px 14px 40px;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(95,201,255,.14), transparent 34%),
+        radial-gradient(circle at 12% 18%, rgba(246,201,107,.10), transparent 26%),
+        linear-gradient(180deg,#0b0e14 0%,#05070a 48%,#020304 100%);
+}
+
+/* =========================
+   IPHONE FRAME
+========================= */
+.shell{
+    width:100%;
+    max-width:430px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    position:relative;
+    padding:66px 12px 18px;
+    border-radius:56px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.008)),
+        linear-gradient(180deg,#0a0e14 0%,#030507 100%);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:
+        0 0 0 2px rgba(0,0,0,.85),
+        0 0 0 4px rgba(194,202,214,.28),
+        0 38px 90px rgba(0,0,0,.72),
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 -1px 0 rgba(255,255,255,.025);
+    overflow:hidden;
+}
+
+/* Dynamic Island */
+.shell::before{
+    content:"";
+    position:absolute;
+    top:16px;
+    left:50%;
+    transform:translateX(-50%);
+    width:124px;
+    height:34px;
+    border-radius:999px;
+    background:#000;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.025),
+        0 3px 10px rgba(0,0,0,.65);
+    z-index:20;
+}
+
+/* sensor dot */
+.shell::after{
+    content:"";
+    position:absolute;
+    top:28px;
+    left:calc(50% + 42px);
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#2b6ecf,#07111d 55%,#000 75%);
+    box-shadow:0 0 7px rgba(64,146,255,.32);
+    z-index:21;
+}
+
+/* =========================
+   HEADER - iOS GLASS
+========================= */
+.header{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:14px 16px;
+    border-radius:24px;
+    overflow:hidden;
+    background:linear-gradient(180deg,rgba(31,38,49,.78),rgba(15,19,27,.68));
+    border:1px solid var(--line);
+    -webkit-backdrop-filter:blur(22px) saturate(130%);
+    backdrop-filter:blur(22px) saturate(130%);
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.10),
+        inset 0 -1px 0 rgba(0,0,0,.35);
+}
+
+.header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(110deg,transparent 12%,rgba(255,255,255,.075) 28%,transparent 43%),
+        radial-gradient(circle at 50% 0%,rgba(246,201,107,.14),transparent 42%);
+    pointer-events:none;
+}
+
+.header::after{
+    content:"";
+    position:absolute;
+    left:14px;
+    right:14px;
+    bottom:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(246,201,107,.55),transparent);
+    opacity:.6;
+}
+
+.logo{
+    max-width:100%;
+    max-height:64px;
+    position:relative;
+    z-index:2;
+    filter:drop-shadow(0 5px 12px rgba(0,0,0,.55)) drop-shadow(0 0 14px rgba(246,201,107,.12));
+}
+
+/* =========================
+   MARQUEE
+========================= */
+.marquee-wrapper{
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    padding:13px 0 11px;
+    border-radius:18px;
+    background:rgba(18,23,31,.74);
+    border:1px solid var(--line-soft);
+    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(18px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 24px rgba(0,0,0,.24);
+}
+
+.marquee-wrapper::before{
+    content:"PAUS123";
+    position:absolute;
+    top:3px;
+    left:12px;
+    font-size:6px;
+    font-weight:800;
+    letter-spacing:1.9px;
+    color:rgba(255,230,173,.48);
+}
+
+.marquee-text{
+    display:inline-block;
+    white-space:nowrap;
+    color:#f8fbff;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.45px;
+    padding-left:100%;
+    text-shadow:0 0 10px rgba(95,201,255,.18);
+    animation:marquee 13s linear infinite;
+}
+
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* =========================
+   MAIN CARD
+========================= */
+.card{
+    position:relative;
+    width:100%;
+    padding:14px;
+    border-radius:30px;
+    overflow:hidden;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.012)),
+        linear-gradient(180deg,rgba(22,28,38,.92),rgba(10,14,20,.95));
+    border:1px solid var(--line);
+    -webkit-backdrop-filter:blur(24px) saturate(130%);
+    backdrop-filter:blur(24px) saturate(130%);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.09),
+        inset 0 -1px 0 rgba(0,0,0,.45);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:-100px;
+    left:-70px;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(95,201,255,.15),transparent 68%);
+    filter:blur(8px);
+    pointer-events:none;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border-radius:23px;
+    border:1px solid rgba(255,255,255,.035);
+    pointer-events:none;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.105);
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 0 0 1px rgba(246,201,107,.055);
+    filter:contrast(1.03) saturate(1.05);
+}
+
+/* =========================
+   CTA BUTTONS - iOS TACTILE
+========================= */
+.cta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    width:100%;
+    position:relative;
+    z-index:3;
+}
+
+.btn{
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    text-align:center;
+    padding:14px 12px;
+    color:#161009;
+    font-size:13px;
+    font-weight:850;
+    letter-spacing:.35px;
+    text-transform:uppercase;
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.38);
+    background:linear-gradient(180deg,#ffe7a7 0%,#f6c96b 48%,#c88a2a 100%);
+    text-shadow:0 1px 0 rgba(255,255,255,.42);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.72),
+        inset 0 -1px 0 rgba(105,65,14,.55);
+    transition:transform .18s ease,filter .18s ease,box-shadow .18s ease;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.btn .btn-label,.badge .badge-label{position:relative;z-index:3}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+    background:linear-gradient(110deg,transparent 14%,rgba(255,255,255,.34) 32%,transparent 48%);
+    transform:translateX(-140%);
+    animation:buttonShine 4.6s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.btn::after{
+    content:"";
+    position:absolute;
+    left:18px;
+    right:18px;
+    top:5px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
+    opacity:.75;
+    pointer-events:none;
+}
+
+@keyframes buttonShine{0%,45%{transform:translateX(-140%)}70%,100%{transform:translateX(140%)}}
+
+.btn:hover{transform:translateY(-2px);filter:brightness(1.045)}
+.btn:active{transform:scale(.985);filter:brightness(.95)}
+
+.slot-gacor{
+    grid-column:1/-1;
+    min-height:66px;
+    font-size:14px;
+    letter-spacing:.65px;
+    border-radius:20px;
+}
+
+/* =========================
+   SECTION BUTTONS
+========================= */
+.section-buttons{display:flex;flex-direction:column;gap:10px;width:100%}
+
+/* =========================
+   BADGES - iOS CONTROL CENTER
+========================= */
+.badge-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    width:100%;
+}
+
+.badge{
+    min-height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    text-align:center;
+    padding:11px 7px;
+    color:#f8fbff;
+    font-size:10px;
+    line-height:1.25;
+    font-weight:750;
+    letter-spacing:.2px;
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.085);
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),
+        rgba(20,26,35,.78);
+    -webkit-backdrop-filter:blur(18px) saturate(125%);
+    backdrop-filter:blur(18px) saturate(125%);
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.07),
+        inset 0 -1px 0 rgba(0,0,0,.32);
+    transition:transform .18s ease,background .18s ease;
+}
+
+.badge::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 22% 10%,rgba(95,201,255,.11),transparent 45%);
+    pointer-events:none;
+}
+
+.badge::after{
+    content:"";
+    position:absolute;
+    left:12px;
+    right:12px;
+    top:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+    pointer-events:none;
+}
+
+.badge:hover{transform:translateY(-2px);background:rgba(28,35,46,.86)}
+.badge:active{transform:scale(.98)}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    width:100%;
+    text-align:center;
+    color:#aeb8c8;
+    font-size:10px;
+    letter-spacing:.35px;
+    padding:11px 10px;
+    margin-top:0;
+    position:relative;
+    z-index:2;
+    border-radius:16px;
+    background:rgba(15,19,26,.70);
+    border:1px solid rgba(255,255,255,.045);
+    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.footer b{color:var(--gold2);text-shadow:0 0 10px rgba(246,201,107,.14)}
+
+/* =========================
+   MOBILE / SAFE AREA
+========================= */
+@media(max-width:480px){
+    body{padding:10px 7px 24px}
+
+    .shell{
+        max-width:100%;
+        padding:61px 9px 14px;
+        border-radius:46px;
+        box-shadow:
+            0 0 0 2px rgba(0,0,0,.85),
+            0 0 0 3px rgba(194,202,214,.22),
+            0 24px 60px rgba(0,0,0,.68),
+            inset 0 1px 0 rgba(255,255,255,.10);
+    }
+
+    .shell::before{top:14px;width:116px;height:32px}
+    .shell::after{top:25px;left:calc(50% + 39px)}
+
+    .header{padding:12px 14px;border-radius:21px}
+    .card{padding:10px;border-radius:25px}
+    .hero{gap:11px}
+    .hero-img{border-radius:18px}
+    .cta{gap:8px}
+    .btn{min-height:54px;padding:12px 8px;font-size:12px;border-radius:16px}
+    .slot-gacor{min-height:61px;font-size:12px;border-radius:18px}
+    .badge-container{gap:6px}
+    .badge{min-height:58px;font-size:9px;padding:9px 4px;border-radius:16px}
+}
+
+/* iPhone narrow widths */
+@media(max-width:390px){
+    .shell{border-radius:42px;padding-left:8px;padding-right:8px}
+    .cta{grid-template-columns:1fr 1fr}
+    .btn{font-size:11px}
+    .badge{font-size:8.5px}
+}
+
+@media(prefers-reduced-motion:reduce){
+    .marquee-text,.btn::before{animation:none}
+    .btn,.badge{transition:none}
+}
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+  <!-- LOGO -->
+  <header class="header">
+    <amp-img
+      class="logo"
+      src="https://paus123.co/img/logo-paus123.gif"
+      width="290" height="90" layout="fixed"
+      alt="SITUS PAUS123 - Logo">
+    </amp-img>
+  </header>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-text">
+      ♣ SELAMAT DATANG DI PLATFORM GAME ONLINE DENGAN MODE MULTIPLAYER ♣
+    </div>
+  </div>
+
+
+  <section class="card hero">
+    <amp-img
+      class="hero-img"
+      src="https://paus123.co/img/p-a-u-s-1-2-3.png"
+      width="1024" height="1024" layout="responsive"
+      alt="SITUS PAUS123">
+    </amp-img>
+
+
+    <div class="cta">
+
+    <a class="btn"
+       href="https://cutt.ly/starp123"
+       target="_blank">
+       ⚙ LOGIN
+    </a>
+
+    <a class="btn"
+       href="https://cutt.ly/starp123"
+       target="_blank">
+       ✦ DAFTAR
+    </a>
+
+    <a class="btn slot-gacor"
+       href="https://cutt.ly/starp123"
+       target="_blank">
+       ⚡ LOGIN SLOT GACOR HARI INI ⚡
+    </a>
+
+</div>
+  </section>
+  <footer class="footer"> 
+    <div class="copyright">
+      © 2026 PAUS123. ✓ All Rights Reserved By. <br><b style="color:#ffbf00; font-weight:700;">SEO XIAO</b>
+    </div>
+	
+  </footer>
+
+</div>
+</body>
+</html>
